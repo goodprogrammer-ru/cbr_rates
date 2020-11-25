@@ -52,18 +52,3 @@ class CbrRates
     @rates = result.to_h
   end
 end
-
-# cbr = CBRates.new
-# Скачать курсы валют за сегодня
-
-# cbr = CBRates.new(5.days.ago)
-# Скачать курсы за конкретную дату
-
-# cbr.refreshed_at
-# => 2020-11-25 17:13:28
-
-# cbr.rate("USD", "RUB")
-# => 75.4727
-
-# cbr.exchange(Money.new(100_00, "RUB"), "USD")
-# => #<Money#... 1.25 USD>
