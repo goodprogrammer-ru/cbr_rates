@@ -1,40 +1,39 @@
-# CbrRates
+# Котировки валют с Банка России
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cbr_rates`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Установка
 
-TODO: Delete this and the text above, and describe your gem
+Добавьте
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
+``` rb
 gem 'cbr_rates'
 ```
 
-And then execute:
+И сделайте
 
-    $ bundle install
+    bundle
 
-Or install it yourself as:
+Или сделайте
 
-    $ gem install cbr_rates
+    gem install cbr_rates
 
-## Usage
+## Использование
 
-TODO: Write usage instructions here
+``` rb
+require 'cbr_rates'
 
-## Development
+usd = Money.new('1_50', 'USD')
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+result = CbrRates.new.exchange(usd, 'CAD')
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+puts "1.50 USD -> CAD: #{result.format}"
+```
 
-## Contributing
+Как обращаться с объектом `Money` см. в [документации](https://github.com/RubyMoney/money) этого гема.
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/cbr_rates.
+## Помочь в разработке
 
+Шлите ваши пулреквесты в https://github.com/goodprogrammer-ru/cbr_rates.
 
-## License
+## Лицензия
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+[MIT License](https://opensource.org/licenses/MIT)
