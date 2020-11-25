@@ -5,6 +5,7 @@ require 'money'
 require 'nokogiri'
 
 Money.rounding_mode = BigDecimal::ROUND_HALF_EVEN
+Money.locale_backend = :currency
 
 class CbrRates
   attr_reader :refreshed_at
